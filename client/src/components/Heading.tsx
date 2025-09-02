@@ -13,7 +13,7 @@ const Heading = () => {
             </p>
             <div className="mt-4 flex items-center flex-row">
                 <Switch />
-                <Label htmlFor="dark-mode-toggle" className="ml-2">Dark Mode</Label>
+                <Label htmlFor="dark-mode-toggle" className="ml-2">Dark Mode?</Label>
             </div>
         </div>
 

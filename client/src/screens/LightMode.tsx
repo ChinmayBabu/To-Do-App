@@ -1,18 +1,13 @@
-
-import { Button } from "@/components/ui/button"
 import Heading from "../components/Heading"
-import { Input } from "@/components/ui/input"
+import TodoList from "@/components/TodoList"
 
 
 const LightMode = () => {
     return (
 
-        <div className="flex min-h-svh flex-col items-center justify-center">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-gray-900 p-6">
             <Heading />
-            <div className="flex flex-row justify-center gap-2 ">
-                <Input placeholder="Task?" className="mb-4"/>
-                <Button>Search</Button>
-            </div>
+            <TodoList/>
             
         </div>
 
