@@ -24,7 +24,7 @@ const AddTodo = ({addTodo}:AddTodoProps) => {
                 placeholder="Add a new task"
                 className ="border p-2 flex-1 rounded-1"
             />
-            <button type="submit" className="bg-black text-white px-4 rounded-r-2xl">Add</button>
+            <button type="submit" className="bg-blue-900 text-white px-4 rounded-r-2xl">Add</button>
         </form>
     </div>
   )

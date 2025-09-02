@@ -1,6 +1,5 @@
 
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
+import Theme from "./Theme"
 
 const Heading = () => {
     return (
@@ -12,8 +11,7 @@ const Heading = () => {
                 Keep track. Stay on track.
             </p>
             <div className="mt-4 flex items-center flex-row">
-                <Switch />
-                <Label htmlFor="dark-mode-toggle" className="ml-2">Dark Mode?</Label>
+                <Theme />
             </div>
         </div>
 
