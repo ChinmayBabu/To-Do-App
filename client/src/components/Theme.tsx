@@ -22,7 +22,7 @@ const Theme = () => {
         }}
       />
       <span className="text-sm text-muted-foreground">
-        {checked ? "Dark" : "Light"} Mode?
+        {checked ? "Dark" : "Light"} Mode
       </span>
     </div>
   )

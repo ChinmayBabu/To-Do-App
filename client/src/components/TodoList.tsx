@@ -30,7 +30,7 @@ const TodoList = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl bg-white dark:bg-gray-800 shadow-md rounded-2xl p-6">
+    <div className="w-full max-w-2xl bg-grey-400 dark:bg-gray-800 shadow-md rounded-2xl p-6">
         <AddTodo addTodo={addTodo}/>
         <Table className="border rounded-lg overflow-hidden shadow-lg">
             <TableHeader>
