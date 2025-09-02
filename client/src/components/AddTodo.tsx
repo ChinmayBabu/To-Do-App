@@ -16,7 +16,7 @@ const AddTodo = ({addTodo}:AddTodoProps) => {
     
   return (
     <div>
-        <form onSubmit = {handleSubmit} className = "flex mb-4   overflow- shadow-lg">
+        <form onSubmit = {handleSubmit} className = "flex mb-4 overflow-auto shadow-lg">
             <input
                 type="text"
                 value={task}

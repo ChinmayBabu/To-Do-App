@@ -30,14 +30,14 @@ const TodoList = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6">
+    <div className="w-full max-w-2xl bg-white dark:bg-gray-950 shadow-md rounded-2xl p-6">
         <AddTodo addTodo={addTodo}/>
         <Table className="border rounded-lg overflow-hidden shadow-lg">
             <TableHeader>
                 <TableRow>
                     <TableHead>Done</TableHead>
                     <TableHead>Task</TableHead>
-                    <TableHead>Actions</TableHead>
+                    <TableHead>Delete</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -50,9 +50,6 @@ const TodoList = () => {
                             />
                             </TableCell>
                             <TableCell className={todo.done ? "line-through text-grey-400":""}>
-                                {todo.task}
-                            </TableCell>
-                            <TableCell>
                                 {todo.task}
                             </TableCell>
                             <TableCell>
