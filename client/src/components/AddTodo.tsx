@@ -14,7 +14,7 @@ const AddTodo = ({addTodo}:AddTodoProps) => {
     addTodo(task,action);
     setTask("");
     setAction("");
-}
+  };
     
   return (
     <div>

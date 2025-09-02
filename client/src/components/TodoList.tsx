@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddTodo from './AddTodo';
 import { Table,TableHeader,TableBody,TableRow,TableCell,TableHead } from './ui/table';
 import { Checkbox } from './ui/checkbox';
@@ -7,9 +7,16 @@ import type { Todo } from '@/types';
 
 const TodoList = () => {
   
-  const [todos, setTodos] = useState<Todo[]>([
-    { id: 1, task: "Sample Task", action:"Sample Action", done: false }
-  ]);
+  const [todos, setTodos] = useState<Todo[]>(()=>{
+    const stored = localStorage.getItem("todos");
+    return stored ? JSON.parse(stored) : [
+        { id: 1, task: "Sample Task", action:"Sample Action", done: false }
+    ];
+  });
+
+  useEffect(()=>{
+    localStorage.setItem("todos",JSON.stringify(todos));
+  },[todos]);
 
   const addTodo = (task: string,action: string) => {
     setTodos([...todos, { id:Date.now(),task,action,done:false}]);
@@ -24,9 +31,9 @@ const TodoList = () => {
   };
 
   const deleteTodo = (id: number) => {
-    setTodos(
-        todos.filter((todo) => todo.id!=id)
-    );
+    const updated = todos.filter((todo) => todo.id !== id);
+    setTodos(updated);
+    localStorage.setItem("todos", JSON.stringify(updated));
   };
 
   return (
