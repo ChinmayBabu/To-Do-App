@@ -8,11 +8,11 @@ import type { Todo } from '@/types';
 const TodoList = () => {
   
   const [todos, setTodos] = useState<Todo[]>([
-    { id: 1, task: "Sample Task", done: false }
+    { id: 1, task: "Sample Task", action:"Sample Action", done: false }
   ]);
 
-  const addTodo = (task: string) => {
-    setTodos([...todos, { id:Date.now(),task,done:false}]);
+  const addTodo = (task: string,action: string) => {
+    setTodos([...todos, { id:Date.now(),task,action,done:false}]);
   };
 
   const toggleTodo = (id : number) => {
@@ -37,6 +37,7 @@ const TodoList = () => {
                 <TableRow>
                     <TableHead>Done</TableHead>
                     <TableHead>Task</TableHead>
+                    <TableHead>Action</TableHead>
                     <TableHead>Delete</TableHead>
                 </TableRow>
             </TableHeader>
@@ -51,6 +52,9 @@ const TodoList = () => {
                             </TableCell>
                             <TableCell className={todo.done ? "line-through text-grey-400":""}>
                                 {todo.task}
+                            </TableCell>
+                            <TableCell className={todo.done ? "line-through text-grey-400":""}>
+                                {todo.action}
                             </TableCell>
                             <TableCell>
                                 <Button variant="destructive" onClick={() => deleteTodo(todo.id)}>Delete</Button>
